@@ -13,7 +13,7 @@ def train_model():
     logger.setLevel(logging.INFO)
 
     # Setting file paths for our model
-    model_name = 'model-wine'
+    model_path = 'model-wine'
     #model_name = os.environ["MODEL_NAME"]
 
     logger.info(" > Importing Data < ")
@@ -30,9 +30,9 @@ def train_model():
     regressor.fit(X_train, y_train)
 
     logger.info(" > Saving model to container < ")
-    dump(regressor, model_name)
+    dump(regressor, model_path)
 
-    logger.info("Model saved with name: " + model_name)
+    logger.info("Model saved with name: " + model_path)
     logger.info(" > Evaluating the Model < ")
 
     y_predicted = regressor.predict(X_test)
